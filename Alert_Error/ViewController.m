@@ -20,4 +20,15 @@ static int count = 0;
   [[AlertSingleton sharedActionAlert] showAlertWithTitle:title message:message];
 }
 
+- (IBAction)simpleAlert:(id)sender {
+  UIAlertView *simpleAv = [[UIAlertView alloc] initWithTitle:@"A Simple Title"
+                                                     message:@"A simple message"
+                                                    delegate:nil
+                                           cancelButtonTitle:@"OK"
+                                           otherButtonTitles:nil];
+  [simpleAv show];
+  simpleAv.title = nil;
+  [simpleAv show]; // showing twice? 
+}
+
 @end
